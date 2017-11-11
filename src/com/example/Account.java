@@ -7,6 +7,19 @@ public class Account {
     private String customerEmail;
     private String customerPhoneNumber;
 
+    public Account(){
+        System.out.println("Empty constructor called");
+    }
+
+    public Account(String number, double balance, String customerName, String customerEmail, String customerPhoneNumber){
+        this.number = number;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhoneNumber = customerPhoneNumber;
+        System.out.println("Constructor with parameters called");
+    }
+
     public String getNumber() {
         return number;
     }
@@ -49,15 +62,18 @@ public class Account {
 
     public void depositFunds(double funds){
         this.balance += funds;
-        System.out.println("Deposit of " + String.format("%.2f", funds) + "$ " + "successful, balance set to: " + String.format("%.2f", this.balance) + "$");
+        System.out.println("Deposit of " + String.format("%.2f", funds) + "$ " + "successful, balance set to: "
+                + String.format("%.2f", this.balance) + "$");
     }
 
     public void withdrawFunds(double funds){
         if(this.balance-funds < 0){
-            System.out.println("Can't withdraw, account balance too low, actual balance is: " + String.format("%.2f", this.balance) + "$");
+            System.out.println("Can't withdraw " + String.format("%.2f", funds) + "$"
+                    + ", account balance too low, actual balance is: " + String.format("%.2f", this.balance) + "$");
         } else {
             this.balance -= funds;
-            System.out.println("Withdraw of " + String.format("%.2f", funds) + "$ " + "successful, balance set to: " + String.format("%.2f", this.balance) + "$");
+            System.out.println("Withdraw of " + String.format("%.2f", funds) + "$ "
+                    + "successful, balance set to: " + String.format("%.2f", this.balance) + "$");
         }
     }
 }
