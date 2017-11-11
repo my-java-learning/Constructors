@@ -18,5 +18,18 @@ public class Main {
 		secondAccount.depositFunds(1000);
 		secondAccount.withdrawFunds(500);
 		secondAccount.withdrawFunds(1500);
+
+		VipCustomer vipCustomer1 = new VipCustomer();
+		System.out.println(vipCustomer1.getCreditLimit());
+		System.out.println(vipCustomer1.getEmail());
+		System.out.println(vipCustomer1.getName());
+		VipCustomer vipCustomer2 = new VipCustomer("Second name" , "Second email");
+		System.out.println(vipCustomer2.getCreditLimit());
+		System.out.println(vipCustomer2.getEmail());
+		System.out.println(vipCustomer2.getName());
+		VipCustomer vipCustomer3 = new VipCustomer("Third name" , 15000 , "Third email");
+		System.out.println(vipCustomer3.getCreditLimit());
+		System.out.println(vipCustomer3.getEmail());
+		System.out.println(vipCustomer3.getName());
     }
 }
